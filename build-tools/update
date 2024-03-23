@@ -189,7 +189,7 @@ try {
 	console.log("git hook failed to retrieve news (exec command failed):\n" + (e.error + e.stderr + e.stdout));
 }
 try {
-	if (stdout) [newsid, news] = JSON.parse(stdout);
+	//if (stdout) [newsid, news] = JSON.parse(stdout);
 } catch (e) {
 	console.log("git hook failed to retrieve news (parsing JSON failed):\n" + e.stack);
 }
@@ -201,7 +201,7 @@ try {
 	indexContents = indexContents.replace(/<!-- head custom -->/g, '' + fs.readFileSync('config/head-custom.html'));
 } catch (e) {}
 
-fs.writeFileSync('play.pokemonshowdown.com/index.html', indexContents);
+//fs.writeFileSync('play.pokemonshowdown.com/index.html', indexContents);
 fs.writeFileSync('play.pokemonshowdown.com/preactalpha.html', preactIndexContents);
 fs.writeFileSync('play.pokemonshowdown.com/crossprotocol.html', crossprotocolContents);
 fs.writeFileSync('play.pokemonshowdown.com/js/replay-embed.js', replayEmbedContents);
